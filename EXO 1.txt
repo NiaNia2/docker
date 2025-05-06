@@ -1,0 +1,34 @@
+EXO 1
+
+INSERT INTO fiche_table (titre, durée_en_minutes, date_de_sortie)
+VALUES 
+('The gentlement', '113', '2020'),
+('Kuzco', '75', '2000'),
+('Joker', '122', '2019'),
+('Sweeney todd', '116', '2007'),
+('Princesse mononoké', '134', '1997');
+
+
+
+
+
+exo 2 :
+1:
+SELECT ville_surface, ville_nom 
+FROM villes_france_free 
+ORDER BY ville_surface ASC 
+LIMIT 5
+
+2:
+SELECT ville_population_2010, ville_code_postal 
+FROM villes_france_free 
+ORDER BY ville_population_2010 DESC 
+LIMIT 15
+
+3:
+SELECT ville_departement, ville_nom_simple
+FROM villes_france_free
+WHERE ville_nom_simple LIKE 'p%'
+
+4:
+
