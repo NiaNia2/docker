@@ -31,4 +31,31 @@ FROM villes_france_free
 WHERE ville_nom_simple LIKE 'p%'
 
 4:
+SELECT ville_departement, SUM(ville_population_2010), SUM(ville_population_1999), SUM(ville_population_2012)
+FROM villes_france_free
+GROUP BY ville_departement
+
+5:
+SELECT ville_nom, ville_population_1999 
+FROM villes_france_free
+WHERE ville_population_1999 > 20000
+
+6:
+UPDATE villes_france_free
+SET ville_longitude_dms = REPLACE (ville_longitude_dms, '+', '*')
+WHERE ville_longitude_dms LIKE '+%'
+
+7:
+SELECT REVERSE(departement_nom)
+FROM departement
+WHERE departement_code > 97
+
+8:
+SELECT ville_population_2010, departement_nom
+FROM villes_france_free
+INNER JOIN departement
+ON villes_france_free.ville_id = departement.departement_id
+ORDER BY ville_population_2010 DESC
+LIMIT 5 
+
 
